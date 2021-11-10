@@ -34,6 +34,12 @@ while True:
 
     for x in range(WIDTH):
         for y in range(HEIGHT):
+            # Get the neighboring coordinates of (x, y), even if they
+            # wrap around the edge:
+            left = (x - 1) % WIDTH
+            right = (x + 1) % WIDTH
+            above = (y - 1) % HEIGHT
+            below = (y + 1) % HEIGHT
     try:
         time.sleep(1) # Add a 1 second pause to reduce flickering.
     except KeyboardInterrupt:
