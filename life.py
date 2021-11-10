@@ -32,6 +32,8 @@ for x in range(WIDTH):  # loop over every possible column.
 
 while True:
 
+    for x in range(WIDTH):
+        for y in range(HEIGHT):
     try:
         time.sleep(1) # Add a 1 second pause to reduce flickering.
     except KeyboardInterrupt:
