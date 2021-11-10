@@ -21,3 +21,11 @@ DEAD = ' '   # The character representing a dead cell.
 # Their keys are (x, y) tuples and their values are one of the ALIVE
 # or DEAD values.
 nextCells = {}
+# put random dead and live cells into nextCells:
+for x in range(WIDTH):  # loop over every possible column.
+    for y in range(HEIGHT):  # loop over every possible row.
+        # 50/50 chance for starting cells being alive or dead.
+        if random.randint(0, 1) == 0:
+            nextCells[(x, y)] = ALIVE # Add a living cell.
+        else:
+            nextCells[(x, y)] = DEAD  # Add a dead cell.
