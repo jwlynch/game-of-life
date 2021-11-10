@@ -29,3 +29,12 @@ for x in range(WIDTH):  # loop over every possible column.
             nextCells[(x, y)] = ALIVE # Add a living cell.
         else:
             nextCells[(x, y)] = DEAD  # Add a dead cell.
+
+while True:
+
+    try:
+        time.sleep(1) # Add a 1 second pause to reduce flickering.
+    except KeyboardInterrupt:
+        print("Conway's Game of Life")
+        print("by Al Sweigart al@inventwithpython.com")
+        sys.exit()  # When Ctrl-C is pressed, end the program.
