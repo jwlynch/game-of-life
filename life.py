@@ -30,7 +30,8 @@ for x in range(WIDTH):  # loop over every possible column.
         else:
             nextCells[(x, y)] = DEAD  # Add a dead cell.
 
-while True:
+while True:  # Main program loop.
+    # Each iteration of this loop is a step of the simulation.
 
     for x in range(WIDTH):
         for y in range(HEIGHT):
