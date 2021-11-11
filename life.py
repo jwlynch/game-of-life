@@ -72,6 +72,18 @@ while True:  # Main program loop.
             if cells[(right, below)] == ALIVE:
                 numNeighbors += 1  # Bottom-right neighbor is alive
 
+            # Set cell based on Conway's Game of Life rules:
+            if cells[(x, y)] == ALIVE and (numNeighbors == 2
+                                           or numNeighbors == 3):
+                # Living cells witn 2 or 3 living neighbors stay alive:
+                nextCells[(x, y)] = ALIVE
+            elif cells[(x, y)] == DEAD and numNeighbors == 3:
+                # Dead cells with 3 living neighbors are newborn:
+                nextCells[(x, y)] = ALIVE
+            else:
+                # Everything else dies or stays dead:
+                nextCells[(x, y)] = DEAD
+
     try:
         time.sleep(1) # Add a 1 second pause to reduce flickering.
     except KeyboardInterrupt:
