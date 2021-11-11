@@ -33,7 +33,16 @@ for x in range(WIDTH):  # loop over every possible column.
 while True:  # Main program loop.
     # Each iteration of this loop is a step of the simulation.
 
+    print("\n" * 50)  # Separate each step with newlines.
     cells = copy.deepcopy(nextCells)
+
+    # Print cells on the screen:
+    for y in range(HEIGHT):
+        for x in range(WIDTH):
+            print(cells[(x, y)], end='')
+        print()
+    print('Press ctrl-C to quit.')
+
     for x in range(WIDTH):
         for y in range(HEIGHT):
             # Get the neighboring coordinates of (x, y), even if they
