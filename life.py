@@ -43,6 +43,7 @@ while True:  # Main program loop.
         print()
     print('Press ctrl-C to quit.')
 
+    # Calculate the next step's cells based on current step's cells:
     for x in range(WIDTH):
         for y in range(HEIGHT):
             # Get the neighboring coordinates of (x, y), even if they
